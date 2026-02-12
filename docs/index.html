@@ -2,343 +2,216 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>PieceWeight – Order & Weight Calculator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PieceWeight - Smart Order Calculator</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; padding: 2rem; max-width: 900px; margin: 0 auto; color: #333; }
-        h1 { color: #2c3e50; }
-        .btn { display: inline-block; padding: 0.8rem 1.5rem; margin: 0.5rem; border-radius: 5px; text-decoration: none; font-weight: bold; }
-        .btn-primary { background: #2c3e50; color: white; }
-        .btn-secondary { background: #7f8c8d; color: white; }
-        .feature { background: #f8f9fa; padding: 1rem; margin: 1rem 0; border-left: 4px solid #2c3e50; }
-    </style>
-</head>
-<body>
-
-    <h1>🍰 PieceWeight</h1>
-    <p><strong>From Order to Receipt in 3 Seconds</strong></p>
-    <p>A professional command-line tool for calculating total weight and price for piece-based orders.</p>
-
-    <div>
-        <a href="https://github.com/umairparak/pieceweight/releases/download/v0.1.0/pieceweight-aarch64-unknown-linux-musl.tar.gz" class="btn btn-primary">⬇️ Download ARM64 Binary ⭐</a>
-        <a href="https://github.com/umairparak/pieceweight/releases/download/v0.1.0/pieceweight-x86_64-unknown-linux-musl.tar.gz" class="btn btn-secondary">⬇️ Download x86_64 Binary</a>
-        <a href="https://github.com/umairparak/pieceweight" class="btn">View on GitHub</a>
-    </div>
-
-    <hr>
-
-    <h2>📋 Exam Project 24W-GBAC</h2>
-    <p>This project was created for the Deggendorf University exam.</p>
-
-    <h3>Requirements Met:</h3>
-    <ul>
-        <li>✅ Personal problem solved (baklava shop automation)</li>
-        <li>✅ Rust CLI tool with professional error handling</li>
-        <li>✅ GitHub Actions cross-compilation for <strong>ARM64</strong></li>
-        <li>✅ GitHub Pages marketing site</li>
-        <li>✅ Complete documentation</li>
-    </ul>
-
-    <hr>
-
-    <h2>✨ Features</h2>
-    <div class="feature">⚡ <strong>Instant Calculations</strong> - Type "pistachio,5" and get total + receipt</div>
-    <div class="feature">📄 <strong>Professional Receipts</strong> - Beautifully formatted with perfect alignment</div>
-    <div class="feature">🔄 <strong>Batch Processing</strong> - Process 1000+ orders from CSV in milliseconds</div>
-    <div class="feature">⚙️ <strong>Customizable</strong> - Edit TOML config for ANY business (bakery, butcher, cheese)</div>
-    <div class="feature">🐧 <strong>Cross-Platform</strong> - Linux, ARM64, Windows, macOS</div>
-    <div class="feature">🆓 <strong>Free & Open Source</strong> - MIT License</div>
-
-    <hr>
-
-    <h2>🚀 Quick Start</h2>
-    <pre style="background: #f4f4f4; padding: 1rem; border-radius: 5px; overflow-x: auto;">
-# Download for your platform
-wget https://github.com/umairparak/pieceweight/releases/download/v0.1.0/pieceweight-x86_64-unknown-linux-musl.tar.gz
-
-# Extract and install
-tar -xzf pieceweight-*.tar.gz
-chmod +x pieceweight-*
-sudo mv pieceweight-* /usr/local/bin/pieceweight
-
-# Start ordering!
-pieceweight interactive
-    </pre>
-
-    <hr>
-
-    <h2 style="text-align: center; color: #2c3e50;">📊 Business Plan & Monetization Strategy</h2>
-
-    <h3 style="color: #2c3e50;">💰 Pricing Strategy - Freemium Model</h3>
-
-    <div style="display: flex; gap: 2rem; justify-content: center; margin: 2rem 0; flex-wrap: wrap;">
-
-        <!-- Free Tier -->
-        <div style="border: 2px solid #7f8c8d; border-radius: 10px; padding: 2rem; width: 280px; text-align: center; background: white;">
-            <span style="font-size: 3rem;">🆓</span>
-            <h3 style="color: #2c3e50;">Free</h3>
-            <p style="font-size: 2rem; font-weight: bold;">€0</p>
-            <ul style="list-style: none; padding: 0; text-align: left;">
-                <li>✅ Linux x86_64</li>
-                <li>✅ Linux ARM64</li>
-                <li>✅ MIT License</li>
-                <li>✅ Community support</li>
-            </ul>
-        </div>
-
-        <!-- Professional Tier -->
-        <div style="border: 3px solid #27ae60; border-radius: 10px; padding: 2rem; width: 280px; text-align: center; background: white;">
-            <span style="font-size: 3rem;">💎</span>
-            <h3 style="color: #27ae60;">Professional</h3>
-            <p style="font-size: 2rem; font-weight: bold;">€49</p>
-            <p style="font-size: 0.9rem; color: #666;">One-time payment</p>
-            <ul style="list-style: none; padding: 0; text-align: left;">
-                <li>✅ Windows version</li>
-                <li>✅ macOS version</li>
-                <li>✅ Custom receipt branding</li>
-                <li>✅ Priority email support</li>
-                <li>✅ Lifetime updates</li>
-            </ul>
-            <p style="margin-top: 1.5rem; font-weight: bold; color: #27ae60;">
-                Available via Gumroad (Conceptual – Exam Project)
-            </p>
-        </div>
-
-        <!-- Enterprise Tier -->
-        <div style="border: 2px solid #8e44ad; border-radius: 10px; padding: 2rem; width: 280px; text-align: center; background: white;">
-            <span style="font-size: 3rem;">🏢</span>
-            <h3 style="color: #8e44ad;">Enterprise</h3>
-            <p style="font-size: 2rem; font-weight: bold;">€499/year</p>
-            <ul style="list-style: none; padding: 0; text-align: left;">
-                <li>✅ Custom feature development</li>
-                <li>✅ SLA guarantee</li>
-                <li>✅ Phone support</li>
-                <li>✅ On-premise deployment</li>
-                <li>✅ Team training</li>
-            </ul>
-            <p style="margin-top: 1.5rem; font-weight: bold; color: #8e44ad;">
-                Enterprise licensing available upon request (Conceptual – Exam Project)
-            </p>
-        </div>
-
-    </div>
-
-    <p style="text-align: center; color: #666; font-size: 0.9rem; margin-top: 1rem;">
-        Note: Payment integration is not implemented. Pricing and monetization strategy are part of the academic business model demonstration.
-    </p>
-
-    <hr>
-
-    <h3 style="color: #2c3e50;">📈 Year 1 Revenue Projection</h3>
-
-    <div style="background: #2c3e50; color: white; padding: 2rem; border-radius: 10px; text-align: center;">
-        <p>500 Free Users → 10% Conversion → 50 Paid Customers</p>
-        <h2>Projected Revenue: €3,448</h2>
-        <p>Estimated Net Profit: €3,248</p>
-    </div>
-
-    <hr>
-
-    <p style="text-align: center; color: #7f8c8d; margin-top: 2rem;">
-        📦 PieceWeight - Built with 🦀 Rust for 24W-GBAC<br>
-        © 2026 Umair Parak | MIT License
-    </p>
-
-</body>
-</html>
-If you want, I can now:
-
-Refine it to look more minimal and academic
-
-Or polish it to look more startup-investor ready
-
-Or simplify it to look cleaner for professor evaluation
-
-Tell me which direction you want.
-
-
-You said:
-and also user aqusition stretegy is fake like my uncle bakery improve them all and give me code 
-
-ChatGPT said:
-Good. For an exam submission, exaggerated claims like “saved my uncle €3,600/year” weaken credibility.
-
-We will:
-
-Remove unrealistic reach numbers
-
-Remove unverifiable claims
-
-Replace with academically grounded strategy
-
-Add realistic assumptions
-
-Keep it professional and defensible if your professor asks questions
-
-Below is the fully revised, academically credible version of your entire HTML file.
-
-✅ Cleaned + Realistic + Defensible Version
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PieceWeight - Smart Order Calculator</title>
-    <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; padding: 2rem; max-width: 900px; margin: 0 auto; color: #333; }
-        h1, h2, h3 { color: #2c3e50; }
-        .btn { display: inline-block; padding: 0.8rem 1.5rem; margin: 0.5rem; border-radius: 5px; text-decoration: none; font-weight: bold; }
-        .btn-primary { background: #2c3e50; color: white; }
-        .btn-secondary { background: #7f8c8d; color: white; }
-        .feature { background: #f8f9fa; padding: 1rem; margin: 1rem 0; border-left: 4px solid #2c3e50; }
-        .card { background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            line-height: 1.6;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .section {
+            margin-bottom: 2rem;
+        }
+        .card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        .download-btn {
+            display: inline-block;
+            padding: 0.7rem 1.4rem;
+            background: #2c3e50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-right: 1rem;
+        }
+        footer {
+            margin-top: 3rem;
+            color: #777;
+            text-align: center;
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
 
 <h1>🍰 PieceWeight</h1>
-<p><strong>CLI-Based Order & Weight Calculator</strong></p>
-<p>A Rust command-line application for calculating total weight and pricing of piece-based food orders.</p>
+<p><strong>A CLI-Based Order & Weight Calculation Tool</strong></p>
 
-<div>
-    <a href="https://github.com/umairparak/pieceweight/releases/download/v0.1.0/pieceweight-aarch64-unknown-linux-musl.tar.gz" class="btn btn-primary">Download ARM64 Binary</a>
-    <a href="https://github.com/umairparak/pieceweight/releases/download/v0.1.0/pieceweight-x86_64-unknown-linux-musl.tar.gz" class="btn btn-secondary">Download x86_64 Binary</a>
-    <a href="https://github.com/umairparak/pieceweight" class="btn">View on GitHub</a>
+<div class="section">
+    <p>
+        PieceWeight is a Rust-based command-line application designed to calculate 
+        total weight and pricing for piece-based food orders.
+    </p>
+    <p>
+        The project was developed as part of the 24W-GBAC academic examination.
+    </p>
 </div>
 
 <hr>
 
-<h2>📋 Academic Context</h2>
-<p>This project was developed as part of the 24W-GBAC examination at Deggendorf University.</p>
-
-<ul>
-    <li>Personal real-world problem identified (manual order calculation inefficiency)</li>
-    <li>Rust CLI implementation</li>
-    <li>Error handling & input validation</li>
-    <li>GitHub repository with version control</li>
-    <li>GitHub Actions for cross-compilation (ARM64)</li>
-    <li>GitHub Pages deployment</li>
-</ul>
-
-<hr>
-
-<h2>✨ Core Features</h2>
-
-<div class="feature"><strong>Instant Calculation:</strong> Enter item and quantity to compute total weight and price.</div>
-<div class="feature"><strong>Structured Receipt Output:</strong> Formatted CLI receipt with totals.</div>
-<div class="feature"><strong>Batch Mode:</strong> Process CSV files for multiple orders.</div>
-<div class="feature"><strong>Configurable:</strong> Products and weights defined in TOML configuration.</div>
-<div class="feature"><strong>Cross-Platform:</strong> Linux (x86_64 + ARM64), Windows, macOS.</div>
+<div class="section">
+    <h2>🚀 Problem Statement</h2>
+    <p>
+        In small food businesses, orders are often taken manually.
+        Staff must:
+    </p>
+    <ul>
+        <li>Count individual pieces</li>
+        <li>Calculate total weight</li>
+        <li>Compute final price</li>
+        <li>Double-check totals to avoid mistakes</li>
+    </ul>
+    <p>
+        Manual calculation increases the risk of human error and slows down service.
+        PieceWeight automates this process.
+    </p>
+</div>
 
 <hr>
 
-<h2>🚀 Example Usage</h2>
+<div class="section">
+    <h2>✨ Core Features</h2>
 
-<pre style="background: #f4f4f4; padding: 1rem; border-radius: 5px;">
+    <div class="card">
+        <strong>Instant Calculation</strong><br>
+        Enter item and quantity → receive total weight and price immediately.
+    </div>
+
+    <div class="card">
+        <strong>Formatted Receipt Output</strong><br>
+        Clear CLI-based receipt with totals and breakdown.
+    </div>
+
+    <div class="card">
+        <strong>Batch Processing</strong><br>
+        Process multiple orders via CSV input.
+    </div>
+
+    <div class="card">
+        <strong>Configurable Products</strong><br>
+        Product weights and pricing defined in a TOML configuration file.
+    </div>
+
+    <div class="card">
+        <strong>Cross-Compilation</strong><br>
+        Supports Linux (x86_64 + ARM64) with GitHub Actions.
+    </div>
+</div>
+
+<hr>
+
+<div class="section">
+    <h2>📖 How It Works</h2>
+
+    <ol>
+        <li>Edit the configuration file with product weights and prices.</li>
+        <li>Run the application in interactive mode.</li>
+        <li>Enter item name and quantity.</li>
+        <li>Receive calculated totals and receipt output.</li>
+    </ol>
+
+<pre style="background:#f4f4f4;padding:1rem;border-radius:5px;">
 pieceweight interactive
 > pistachio,5
 > walnut,3
 </pre>
 
-<hr>
-
-<h2>📊 Business Model (Conceptual)</h2>
-
-<p>The following section outlines a theoretical monetization strategy as part of the business planning component of the exam.</p>
-
-<h3>🎯 Target Market</h3>
-
-<div class="card">
-<ul>
-    <li>Small bakeries and pastry shops</li>
-    <li>Butcher shops selling by piece</li>
-    <li>Small food retailers without POS automation</li>
-    <li>Developers seeking customizable CLI tools</li>
-</ul>
-</div>
-
-<h3>📣 User Acquisition Strategy (Realistic & Academic)</h3>
-
-<div class="card">
-<strong>1. Open Source Distribution</strong>
-<p>Release under MIT license to encourage adoption and community contribution via GitHub.</p>
-</div>
-
-<div class="card">
-<strong>2. Local Market Validation</strong>
-<p>Demonstration to selected local small businesses to gather feedback and validate usability.</p>
-</div>
-
-<div class="card">
-<strong>3. Developer Community Exposure</strong>
-<p>Sharing in Rust and CLI-focused online communities to gain technical users.</p>
-</div>
-
-<div class="card">
-<strong>4. Academic & Portfolio Use</strong>
-<p>Project can serve as a portfolio example demonstrating Rust, DevOps, and deployment knowledge.</p>
-</div>
-
-<p>
-Note: No inflated reach numbers or guaranteed conversions are assumed. Growth projections are conservative and hypothetical.
-</p>
-
-<hr>
-
-<h3>💰 Pricing Strategy (Conceptual)</h3>
-
-<div class="card">
-<strong>Free Version (€0)</strong>
-<ul>
-    <li>Linux binaries</li>
-    <li>Community support</li>
-    <li>MIT license</li>
-</ul>
-</div>
-
-<div class="card">
-<strong>Professional Version (€49 one-time)</strong>
-<ul>
-    <li>Windows & macOS binaries</li>
-    <li>Custom receipt branding</li>
-    <li>Email support</li>
-</ul>
-<p><em>Available via digital distribution platforms (conceptual).</em></p>
-</div>
-
-<div class="card">
-<strong>Enterprise Version (€499/year)</strong>
-<ul>
-    <li>Custom development</li>
-    <li>SLA support</li>
-    <li>Training & deployment assistance</li>
-</ul>
-<p><em>Enterprise licensing available upon request (conceptual).</em></p>
-</div>
-
-<p style="font-size: 0.9rem; color: #666;">
-Payment processing integration is not implemented. Pricing and revenue models are theoretical components of the academic business proposal.
-</p>
-
-<hr>
-
-<h3>📈 Conservative Revenue Scenario (Hypothetical)</h3>
-
-<div class="card">
-<ul>
-    <li>100 total users in Year 1</li>
-    <li>5% conversion to paid tier</li>
-    <li>5 paid customers × €49</li>
-</ul>
-<strong>Projected Revenue: €245 (hypothetical scenario)</strong>
 </div>
 
 <hr>
 
-<p style="text-align: center; color: #7f8c8d; margin-top: 2rem;">
-PieceWeight – Built with Rust<br>
-© 2026 Umair Parak | MIT License
-</p>
+<div class="section">
+    <h2>🧱 Technical Implementation</h2>
+    <ul>
+        <li>Written in Rust</li>
+        <li>Command-line interface</li>
+        <li>Error handling and input validation</li>
+        <li>File-based configuration (TOML)</li>
+        <li>Cross-compilation via GitHub Actions</li>
+        <li>MIT License</li>
+    </ul>
+</div>
+
+<hr>
+
+<div class="section">
+    <h2>📥 Download</h2>
+
+    <a class="download-btn" href="https://github.com/umairparak/pieceweight/releases">
+        View Releases on GitHub
+    </a>
+</div>
+
+<hr>
+
+<div class="section">
+    <h2>💰 Business Model (Conceptual – Academic Component)</h2>
+
+    <p>
+        The following pricing structure represents a theoretical monetization model.
+    </p>
+
+    <div class="card">
+        <strong>Free Version (€0)</strong>
+        <ul>
+            <li>Linux binaries</li>
+            <li>Community support</li>
+            <li>Open-source license</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <strong>Professional Version (€49 – one-time)</strong>
+        <ul>
+            <li>Windows and macOS builds</li>
+            <li>Custom receipt branding</li>
+            <li>Email support</li>
+        </ul>
+        <p><em>Digital distribution model (conceptual).</em></p>
+    </div>
+
+    <div class="card">
+        <strong>Enterprise Version (€499/year)</strong>
+        <ul>
+            <li>Custom feature development</li>
+            <li>Service-level agreement</li>
+            <li>On-site deployment assistance</li>
+        </ul>
+        <p><em>Enterprise licensing available upon request (conceptual).</em></p>
+    </div>
+
+    <p style="font-size:0.9rem;color:#666;">
+        Note: Payment integration is not implemented. 
+        Pricing is included for academic business modeling purposes only.
+    </p>
+</div>
+
+<hr>
+
+<div class="section">
+    <h2>🎯 Target Users</h2>
+    <ul>
+        <li>Small bakeries and pastry shops</li>
+        <li>Butcher shops</li>
+        <li>Small retail food businesses</li>
+        <li>Developers seeking configurable CLI tools</li>
+    </ul>
+</div>
+
+<footer>
+    PieceWeight – Built with Rust<br>
+    © 2026 Umair Parak | MIT License
+</footer>
 
 </body>
 </html>
