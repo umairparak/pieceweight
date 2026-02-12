@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PieceWeight - Smart Order Calculator</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; padding: 2rem; max-width: 900px; margin: 0 auto; color: #333; }
+        h1 { color: #2c3e50; }
+        .btn { display: inline-block; padding: 0.8rem 1.5rem; margin: 0.5rem; border-radius: 5px; text-decoration: none; font-weight: bold; }
+        .btn-primary { background: #2c3e50; color: white; }
+        .btn-secondary { background: #7f8c8d; color: white; }
+        .feature { background: #f8f9fa; padding: 1rem; margin: 1rem 0; border-left: 4px solid #2c3e50; }
+    </style>
+</head>
+<body>
+    <h1>🍰 PieceWeight</h1>
+    <p><strong>From Order to Receipt in 3 Seconds</strong></p>
+    <p>A professional command-line tool for calculating total weight and price for piece-based orders.</p>
+    
+    <div>
+        <a href="https://github.com/umairparak/pieceweight/releases/download/v0.1.0/pieceweight-aarch64-unknown-linux-musl.tar.gz" class="btn btn-primary">⬇️ Download ARM64 Binary ⭐</a>
+        <a href="https://github.com/umairparak/pieceweight/releases/download/v0.1.0/pieceweight-x86_64-unknown-linux-musl.tar.gz" class="btn btn-secondary">⬇️ Download x86_64 Binary</a>
+        <a href="https://github.com/umairparak/pieceweight" class="btn">View on GitHub</a>
+    </div>
+
+    <hr>
+
+    <h2>📋 Exam Project 24W-GBAC</h2>
+    <p>This project was created for the Deggendorf University exam.</p>
+    
+    <h3>Requirements Met:</h3>
+    <ul>
+        <li>✅ Personal problem solved (baklava shop automation)</li>
+        <li>✅ Rust CLI tool with professional error handling</li>
+        <li>✅ GitHub Actions cross-compilation for <strong>ARM64</strong> (Exam Requirement)</li>
+        <li>✅ GitHub Pages marketing site</li>
+        <li>✅ Complete documentation</li>
+    </ul>
+
+    <hr>
+
+    <h2>✨ Features</h2>
+    <div class="feature">⚡ <strong>Instant Calculations</strong> - Type "pistachio,5" and get total + receipt</div>
+    <div class="feature">📄 <strong>Professional Receipts</strong> - Beautifully formatted with perfect alignment</div>
+    <div class="feature">🔄 <strong>Batch Processing</strong> - Process 1000+ orders from CSV in milliseconds</div>
+    <div class="feature">⚙️ <strong>Customizable</strong> - Edit TOML config for ANY business (bakery, butcher, cheese)</div>
+    <div class="feature">🐧 <strong>Cross-Platform</strong> - Linux, ARM64 (Raspberry Pi), Windows, macOS</div>
+    <div class="feature">🆓 <strong>Free & Open Source</strong> - MIT License</div>
+
+    <hr>
+
+    <h2>🚀 Quick Start</h2>
+    <pre style="background: #f4f4f4; padding: 1rem; border-radius: 5px; overflow-x: auto;">
+# Download for your platform
+wget https://github.com/umairparak/pieceweight/releases/download/v0.1.0/pieceweight-x86_64-unknown-linux-musl.tar.gz
+
+# Extract and install
+tar -xzf pieceweight-*.tar.gz
+chmod +x pieceweight-*
+sudo mv pieceweight-* /usr/local/bin/pieceweight
+
+# Start ordering!
+pieceweight interactive
+    </pre>
+
+    <hr>
+
+    <p style="text-align: center; color: #7f8c8d; margin-top: 2rem;">
+        📦 PieceWeight - Built with 🦀 Rust for 24W-GBAC<br>
+        © 2026 Umair Parak | MIT License
+    </p>
+</body>
+</html>
