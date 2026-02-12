@@ -1,208 +1,244 @@
+Here is the complete version in a single copy-paste text block:
+
 ====================================================================
-          PIECEWEIGHT - Universal Piece-Based Order Calculator
-          Course:  Deggendorf Institute of Technology, Health Informatics
-	  Semester: 1st Semester 
-          Student: Kyaw Zin Tun
-          Date: February 12, 2026
+                    PIECEWEIGHT
+          Piece-Based Order Calculation Tool
+          
+Course:   Deggendorf Institute of Technology, Health Informatics
+Semester: 1st Semester
+Student:  Kyaw Zin Tun
+Date:     February 12, 2026
 ====================================================================
 
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-┃  PART 1: PERSONAL PROBLEM DISCOVERY & AUTOMATION SOLUTION
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-🔍 PROBLEM DISCOVERED:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PART 1: PROBLEM DISCOVERY & AUTOMATION SOLUTION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PROBLEM IDENTIFICATION
 ----------------------
-"My uncle owns a baklava shop in Munich. Every day, he spends 30+ minutes 
-manually calculating order totals and writing receipts. He makes arithmetic 
-mistakes that cost him €50-€100 per week. His handwritten receipts look 
-unprofessional, and he has no digital record keeping."
 
-📊 PROBLEM QUANTIFIED:
-----------------------
-• Time wasted: 30 minutes/day = 15 hours/month = 180 hours/year
-• Financial loss: €75/week average = €300/month = €3,600/year
-• Customer impact: 3-5 incorrect orders per day
-• Professionalism: No digital receipts, no order history
+A small family-operated baklava shop processes orders manually.  
+Each order requires calculating:
 
-🤖 AUTOMATION SOLUTION:
-----------------------
-PieceWeight - A Rust CLI tool that:
-• Calculates total weight and price in 3 seconds (vs 30 minutes manual)
-• Generates professional formatted receipts automatically
-• Provides CSV export for record keeping
-• Eliminates 100% of calculation errors
-• Processes 1000+ orders in <50ms
+• Number of pieces  
+• Total weight  
+• Price based on weight  
+• Writing a handwritten receipt  
 
-⚙️ TECHNICAL IMPLEMENTATION:
-----------------------
-• Language: Rust 2021 Edition
-• Dependencies: clap, serde, toml, csv, chrono
-• Architecture: Clean separation of concerns, custom error handling
-• Binary size: ~1.6 MB (stripped, statically linked)
-• Performance: O(n) time complexity, zero-cost abstractions
+This process is repetitive and time-consuming.  
+Manual calculations increase the possibility of arithmetic mistakes 
+and create inconsistent documentation.
 
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-┃  PART 2: COMMAND-LINE TOOL (EXAM REQUIREMENT)
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-✅ TOOL FEATURES:
-----------------------
-✓ Interactive order entry with real-time validation
-✓ CSV batch processing for bulk orders
-✓ Professional receipt generation (TXT format)
-✓ Perfect alignment with Unicode box drawing
-✓ Comprehensive error handling with custom error types
-✓ TOML configuration for any business type
+PROBLEM ESTIMATION
+------------------
 
-📁 FILES SUBMITTED:
-----------------------
-1. Cargo.toml      - Project dependencies and metadata
-2. src/main.rs     - 350+ lines of production Rust code
-3. pieceweight-linux-arm64 - ARM64 binary (EXAM REQUIREMENT)
+Estimated operational impact:
 
-🔗 GITHUB REPOSITORY:
-----------------------
+• 20–30 minutes per day spent on manual calculations  
+• 10–15 hours per month administrative effort  
+• Occasional calculation inconsistencies  
+• No structured digital order records  
+
+Although financial loss is not precisely measured, the lack of automation 
+reduces efficiency and professionalism.
+
+
+AUTOMATION SOLUTION
+-------------------
+
+PieceWeight is a Rust-based command-line application designed to 
+automate piece-based order calculations.
+
+The system:
+
+• Calculates total weight and final price instantly  
+• Generates structured receipt output  
+• Supports CSV export for record keeping  
+• Uses configurable pricing via a TOML file  
+
+The tool improves consistency, speed, and documentation structure.
+
+
+TECHNICAL IMPLEMENTATION
+------------------------
+
+Language: Rust (2021 Edition)  
+Dependencies: clap, serde, toml, csv, chrono  
+Architecture: Modular structure with custom error handling  
+Binary Size: ~1.5–2 MB (release build)  
+Processing Complexity: Linear per order (O(n))  
+
+The application is optimized for small to medium order volumes 
+typical in local retail environments.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PART 2: COMMAND-LINE TOOL
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+TOOL FEATURES
+-------------
+
+✓ Interactive order entry  
+✓ CSV batch processing  
+✓ Formatted receipt generation (TXT)  
+✓ Structured input validation  
+✓ TOML configuration system  
+✓ Cross-platform compilation support  
+
+The tool operates locally and does not require internet access.
+
+
+GITHUB REPOSITORY
+-----------------
+
 https://github.com/umairparak/pieceweight
-├── .github/workflows/main.yml - Professor's GitHub Action
-├── src/main.rs               - Complete source code
-├── config/sample_categories.toml - Example config
-├── docs/                     - GitHub Pages website
-└── README.md                - Full documentation
 
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-┃  PART 3: MARKETING WEBSITE & BUSINESS PLAN (EXAM REQUIREMENT)
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+The repository contains:
 
-🌐 GITHUB PAGES WEBSITE:
-----------------------
-https://umairparak.github.io/pieceweight/
+• Complete Rust source code  
+• GitHub Actions workflow  
+• Sample configuration file  
+• Documentation  
+• Public GitHub Pages website  
 
-✅ Website includes:
-✓ Professional landing page with hero section
-✓ Problem/solution statement
-✓ Features showcase with icons
-✓ Download buttons for all platforms
-✓ Live demo with terminal output
-✓ Complete documentation
-✓ Mobile-responsive design
 
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-┃  PART 4: USER ACQUISITION STRATEGY (EXAM REQUIREMENT)
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PART 3: WEBSITE & BUSINESS CONCEPT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-🎯 TARGET AUDIENCE:
-----------------------
-• Primary: Small food businesses (bakeries, butcher shops, cheese shops)
-• Secondary: Farmers markets, seafood vendors, candy stores
-• Tertiary: Home bakers, catering services
+The project includes a GitHub Pages website presenting:
 
-📢 MARKETING CHANNELS:
-----------------------
+• Problem statement  
+• Feature overview  
+• Download section  
+• Business model explanation  
+• Documentation  
 
-1️⃣ GITHUB DISCOVERY (0 COST)
-   • MIT License - maximum adoption
-   • Optimized README with badges
-   • Featured in "Awesome Rust" lists
-   • Cross-post to r/rust, r/commandline
-   • Expected reach: 5,000+ developers
+The website is responsive and publicly accessible.
 
-2️⃣ CONTENT MARKETING (0 COST)
-   • Blog post: "How I Saved My Uncle's Bakery €3,600/year with Rust"
-   • Twitter thread: Before/after comparison
-   • YouTube tutorial: 5-minute setup guide
-   • LinkedIn article: "Automating Small Business Operations"
-   • Expected reach: 50,000+ views
 
-3️⃣ COMMUNITY OUTREACH (0 COST)
-   • r/bakery - Share with 50k+ bakers
-   • r/smallbusiness - 2M+ entrepreneurs
-   • r/butchery - 30k+ butchers
-   • Facebook groups for bakery owners
-   • Expected conversion: 5-10%
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PART 4: USER ACQUISITION STRATEGY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-4️⃣ DIRECT SALES (€0 INVESTMENT)
-   • Visit 10 local bakeries in Munich
-   • Offer free setup and training
-   • Get testimonials and case studies
-   • Referral program: 1 month free for referrals
+TARGET AUDIENCE
+---------------
 
-📊 ACQUISITION FUNNEL:
-----------------------
-Awareness (100,000) → Interest (10,000) → Download (1,000) → Paid (50)
-Conversion rate: 5% from free to paid
-Year 1 target: 500 free users, 50 paid customers
+Primary:
 
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-┃  PART 5: MONETIZATION & PRICING STRATEGY (EXAM REQUIREMENT)
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Small bakeries  
+• Butcher shops  
+• Specialty food retailers  
 
-💰 FREEMIUM MODEL:
-----------------------
+Secondary:
 
-┌─────────────────────────────────────────────────────────────┐
-│  TIER 1: FREE 🆓                                           │
-│  Price: €0                                                 │
-│  Target: Hobbyists, students, small trials                │
-│  Features:                                                 │
-│  ✓ Linux x86_64 binary                                     │
-│  ✓ Linux ARM64 binary (Exam Requirement)                  │
-│  ✓ MIT License - modify and distribute                    │
-│  ✓ Community support via GitHub Issues                    │
-│  Strategy: Maximum adoption, build community              │
-├─────────────────────────────────────────────────────────────┤
-│  TIER 2: PROFESSIONAL 💎                                   │
-│  Price: €49 one-time                                       │
-│  Target: Small businesses, serious users                  │
-│  Features:                                                 │
-│  ✓ Windows x86_64 binary (BONUS)                          │
-│  ✓ macOS Intel binary (BONUS)                             │
-│  ✓ macOS Apple Silicon binary (BONUS)                     │
-│  ✓ Custom receipt branding (add your logo)                │
-│  ✓ Priority email support                                 │
-│  ✓ Lifetime updates                                       │
-│  Strategy: Convenience upselling, platform lock-in        │
-├─────────────────────────────────────────────────────────────┤
-│  TIER 3: ENTERPRISE 🏢                                     │
-│  Price: €499/year                                          │
-│  Target: Chains, multi-location businesses                │
-│  Features:                                                 │
-│  ✓ Custom feature development                             │
-│  ✓ SLA guarantee (24h response)                           │
-│  ✓ Phone support                                          │
-│  ✓ On-premise deployment                                  │
-│  ✓ Team training session                                  │
-│  ✓ Invoice billing                                        │
-│  Strategy: High-ticket, recurring revenue                 │
-└─────────────────────────────────────────────────────────────┘
+• Farmers market vendors  
+• Catering services  
 
-💳 PAYMENT PROCESSING:
-----------------------
-│  Platform  │  Fees  │  Use Case                          │
-│───────────┼────────┼────────────────────────────────────│
-│  Gumroad   │  8.5%  │  Instant digital delivery         │
-│  GitHub    │  0%    │  Sponsorships & donations         │
-│  Buy Me A  │  5%    │  Tips from happy users            │
-│  Coffee    │        │                                    │
-│  Invoice   │  0%    │  Enterprise customers (bank)      │
-└───────────┴────────┴────────────────────────────────────┘
 
-📈 REVENUE PROJECTION (YEAR 1):
-----------------------
-Free users: 500 (marketing goal)
-Conversion rate: 10% → 50 paid customers
-Professional tier: 50 × €49 = €2,450
-Enterprise: 2 × €499 = €998
-Total Year 1 Revenue: €3,448
+ACQUISITION APPROACH
+--------------------
 
-📉 COSTS:
-----------------------
-• GitHub Pages: €0 (free)
-• Domain: €15/year (optional)
-• Gumroad fees: ~€200
-• Net Profit Year 1: ~€3,233
+1. Open-Source Distribution  
+   • MIT License  
+   • Discoverable via GitHub search  
+   • Shared within Rust CLI communities  
 
-🔄 SCALABILITY:
-----------------------
-Year 2 goal: 200 paid customers → €9,800
-Year 3 goal: 500 paid customers → €24,500
-Break-even: Month 1
+2. Direct Demonstration  
+   • Present tool to local small businesses  
+   • Offer initial setup support  
+   • Collect feedback for improvement  
+
+3. Community Sharing  
+   • Share in relevant developer forums  
+   • Engage in small-business technology discussions  
+
+
+CONSERVATIVE ADOPTION ESTIMATE (YEAR 1)
+----------------------------------------
+
+• 50–100 downloads  
+• 10–20 active users  
+• 5 potential paying customers (if monetized)  
+
+These projections reflect realistic early-stage adoption 
+for a niche CLI business tool.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PART 5: MONETIZATION & PRICING STRATEGY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PRICING MODEL (CONCEPTUAL)
+--------------------------
+
+Free Version  
+• Linux binaries  
+• Open-source access  
+• Community support  
+
+Professional Version (€49 one-time)  
+• Windows/macOS binaries  
+• Custom receipt branding  
+• Email support  
+
+Enterprise Version (€499/year)  
+• Custom feature development  
+• Dedicated support  
+• Deployment assistance  
+
+Payment processing is not implemented.  
+Pricing is included for business model analysis purposes only.
+
+
+CONSERVATIVE REVENUE SCENARIO
+-----------------------------
+
+Assumption:
+
+5 Professional customers × €49 = €245  
+1 Enterprise customer × €499 = €499  
+
+Estimated Year 1 Revenue: €744  
+
+This represents a small-scale early commercialization scenario.
+
+
+COST STRUCTURE
+--------------
+
+• Hosting: €0 (GitHub Pages)  
+• Development tools: €0  
+• Optional domain: ~€15/year  
+
+Low overhead allows economic viability even at small scale.
+
+
+SCALABILITY POTENTIAL
+---------------------
+
+Future improvements could include:
+
+• GUI version  
+• POS integration  
+• Enhanced reporting features  
+• Structured onboarding for businesses  
+
+Growth depends on product expansion and targeted outreach.
+
+
+FINAL NOTES
+-----------
+
+PieceWeight demonstrates:
+
+• Practical problem identification  
+• CLI application development in Rust  
+• Automation of manual business processes  
+• Basic commercialization planning  
+• Open-source distribution strategy  
+
+All functionality operates locally without cloud dependency.
