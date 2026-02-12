@@ -43,7 +43,7 @@ This project was created for the Deggendorf University exam.
 
 ```bash
 # Download for your platform
-wget https://github.com/YOUR_USERNAME/pieceweight/releases/download/v0.1.0/pieceweight-x86_64-unknown-linux-musl.tar.gz
+wget https://github.com/umairparak/pieceweight/releases/download/v0.1.0/pieceweight-x86_64-unknown-linux-musl.tar.gz
 
 # Extract and install
 tar -xzf pieceweight-*.tar.gz
