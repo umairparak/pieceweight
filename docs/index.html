@@ -12,12 +12,13 @@
             padding: 2rem;
             line-height: 1.6;
             color: #333;
+            background-color: #ffffff;
         }
-        h1, h2, h3 {
+        h1, h2 {
             color: #2c3e50;
         }
         .section {
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
         }
         .card {
             background: #f8f9fa;
@@ -32,13 +33,27 @@
             color: white;
             text-decoration: none;
             border-radius: 5px;
-            margin-right: 1rem;
+            margin-top: 1rem;
+        }
+        .download-btn:hover {
+            background: #1a252f;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
         }
         footer {
             margin-top: 3rem;
             color: #777;
             text-align: center;
             font-size: 0.9rem;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #e0e0e0;
+            margin: 2.5rem 0;
         }
     </style>
 </head>
@@ -53,7 +68,8 @@
         total weight and pricing for piece-based food orders.
     </p>
     <p>
-        The project was developed as part of the 24W-GBAC academic examination.
+        It provides a structured and reliable method to automate calculations 
+        in small retail food environments.
     </p>
 </div>
 
@@ -62,18 +78,18 @@
 <div class="section">
     <h2>🚀 Problem Statement</h2>
     <p>
-        In small food businesses, orders are often taken manually.
-        Staff must:
+        In small bakeries, butcher shops, and similar businesses, 
+        orders are frequently calculated manually.
     </p>
     <ul>
-        <li>Count individual pieces</li>
-        <li>Calculate total weight</li>
-        <li>Compute final price</li>
-        <li>Double-check totals to avoid mistakes</li>
+        <li>Counting individual pieces</li>
+        <li>Calculating total weight</li>
+        <li>Computing final price</li>
+        <li>Verifying totals manually</li>
     </ul>
     <p>
-        Manual calculation increases the risk of human error and slows down service.
-        PieceWeight automates this process.
+        Manual calculation increases service time and introduces the risk of human error.
+        PieceWeight automates this workflow using a configurable CLI system.
     </p>
 </div>
 
@@ -84,28 +100,29 @@
 
     <div class="card">
         <strong>Instant Calculation</strong><br>
-        Enter item and quantity → receive total weight and price immediately.
+        Enter item and quantity to receive total weight and price immediately.
     </div>
 
     <div class="card">
         <strong>Formatted Receipt Output</strong><br>
-        Clear CLI-based receipt with totals and breakdown.
+        Clear terminal-based receipt with subtotal and totals.
     </div>
 
     <div class="card">
         <strong>Batch Processing</strong><br>
-        Process multiple orders via CSV input.
+        Process multiple orders using CSV input files.
     </div>
 
     <div class="card">
-        <strong>Configurable Products</strong><br>
-        Product weights and pricing defined in a TOML configuration file.
+        <strong>Configurable Product Definitions</strong><br>
+        Product weights and prices are defined in a TOML configuration file.
     </div>
 
     <div class="card">
         <strong>Cross-Compilation</strong><br>
-        Supports Linux (x86_64 + ARM64) with GitHub Actions.
+        Supports Linux (x86_64 and ARM64) builds via GitHub Actions.
     </div>
+
 </div>
 
 <hr>
@@ -114,13 +131,13 @@
     <h2>📖 How It Works</h2>
 
     <ol>
-        <li>Edit the configuration file with product weights and prices.</li>
+        <li>Edit the configuration file with product names, weights, and prices.</li>
         <li>Run the application in interactive mode.</li>
         <li>Enter item name and quantity.</li>
         <li>Receive calculated totals and receipt output.</li>
     </ol>
 
-<pre style="background:#f4f4f4;padding:1rem;border-radius:5px;">
+<pre>
 pieceweight interactive
 > pistachio,5
 > walnut,3
@@ -134,10 +151,10 @@ pieceweight interactive
     <h2>🧱 Technical Implementation</h2>
     <ul>
         <li>Written in Rust</li>
-        <li>Command-line interface</li>
-        <li>Error handling and input validation</li>
+        <li>Command-line interface architecture</li>
+        <li>Structured error handling and input validation</li>
         <li>File-based configuration (TOML)</li>
-        <li>Cross-compilation via GitHub Actions</li>
+        <li>Cross-platform compilation pipeline</li>
         <li>MIT License</li>
     </ul>
 </div>
@@ -147,15 +164,19 @@ pieceweight interactive
 <div class="section">
     <h2>📥 Download</h2>
 
+    <p>
+        Precompiled binaries are available via GitHub Releases.
+    </p>
+
     <a class="download-btn" href="https://github.com/umairparak/pieceweight/releases">
-        View Releases on GitHub
+        View Releases
     </a>
 </div>
 
 <hr>
 
 <div class="section">
-    <h2>💰 Business Model (Conceptual – Academic Component)</h2>
+    <h2>💰 Business Model (Conceptual)</h2>
 
     <p>
         The following pricing structure represents a theoretical monetization model.
@@ -166,7 +187,7 @@ pieceweight interactive
         <ul>
             <li>Linux binaries</li>
             <li>Community support</li>
-            <li>Open-source license</li>
+            <li>Open-source access</li>
         </ul>
     </div>
 
@@ -175,24 +196,22 @@ pieceweight interactive
         <ul>
             <li>Windows and macOS builds</li>
             <li>Custom receipt branding</li>
-            <li>Email support</li>
+            <li>Priority email support</li>
         </ul>
-        <p><em>Digital distribution model (conceptual).</em></p>
     </div>
 
     <div class="card">
         <strong>Enterprise Version (€499/year)</strong>
         <ul>
-            <li>Custom feature development</li>
+            <li>Custom feature extensions</li>
             <li>Service-level agreement</li>
-            <li>On-site deployment assistance</li>
+            <li>Deployment support</li>
         </ul>
-        <p><em>Enterprise licensing available upon request (conceptual).</em></p>
     </div>
 
     <p style="font-size:0.9rem;color:#666;">
-        Note: Payment integration is not implemented. 
-        Pricing is included for academic business modeling purposes only.
+        Payment processing and licensing enforcement are not implemented. 
+        Pricing is included for business modeling purposes.
     </p>
 </div>
 
@@ -203,7 +222,7 @@ pieceweight interactive
     <ul>
         <li>Small bakeries and pastry shops</li>
         <li>Butcher shops</li>
-        <li>Small retail food businesses</li>
+        <li>Specialty food retailers</li>
         <li>Developers seeking configurable CLI tools</li>
     </ul>
 </div>
