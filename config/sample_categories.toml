@@ -1,0 +1,35 @@
+[[categories]]
+id = "pistachio"
+name = "Pistachio"
+grams_per_piece = 50.0
+price_per_kg = 2.50
+
+[[categories]]
+id = "walnut"
+name = "Walnut"
+grams_per_piece = 38.0
+price_per_kg = 2.20
+
+[[categories]]
+id = "serma"
+name = "Serma"
+grams_per_piece = 35.0
+price_per_kg = 2.00
+
+[[categories]]
+id = "cashew"
+name = "Cashew"
+grams_per_piece = 45.0
+price_per_kg = 2.70
+
+[[categories]]
+id = "almond"
+name = "Almond"
+grams_per_piece = 42.0
+price_per_kg = 2.60
+
+[[categories]]
+id = "plain"
+name = "Plain"
+grams_per_piece = 30.0
+price_per_kg = 1.80
